@@ -15,9 +15,9 @@ Example
 Using the LRU is very simple:
 
 ```go
-l, _ := New(128)
+l, _ := New[int,string](128)
 for i := 0; i < 256; i++ {
-    l.Add(i, nil)
+    l.Add(i, strconv.Itoa(i))
 }
 if l.Len() != 128 {
     panic(fmt.Sprintf("bad len: %v", l.Len()))
